@@ -1,23 +1,61 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Banner from './components/Banner';
+import NavBar from './components/NavBar';
+import Row from './components/Row';
+import requests from './request';
+import Home from './components/Home';
+import { BrowserRouter as Router ,Route,Routes } from 'react-router-dom';
+import Realhome from './components/Realhome';
+import Moviedetails from './components/Moviedetails';
+import Test from './components/Test';
+
+
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <NavBar/>
+<Router>
+  <Routes>
+    <Route path='/' element={<Realhome/>}/>
+    <Route path='/md' element={<Moviedetails/>}/>
+    <Route path='/test' element={<Test/>}/>
+  </Routes>
+</Router>
+
+{/* <Banner/> */}
+ 
+
+
+
+      {/* <Row
+      title="NetflixOrginals"
+      fetchUrl={requests. fetchTrending} />
+
+      <Home title="Popular on Netflix"
+      fetchUrl={requests. fetchTrending}/>
+
+      
+      <Home title="  ActionMovies"
+      fetchUrl={requests.  fetchActionMovies}/>
+
+    <Home title=" TopRated"
+      fetchUrl={requests.  fetchTopRated}/>
+ 
+
+     <Home title="HorrorMovies"
+      fetchUrl={requests. fetchHorrorMovies}/>
+
+
+      <Home title="NetflixOriginals"
+      fetchUrl={requests.  fetchNetflixOriginals}/>    */}
       </header>
+
+
+
     </div>
   );
 }
